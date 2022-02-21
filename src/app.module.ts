@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import 'dotenv/config'
+import { AuthModule } from './auth/auth.module';
 
+console.log(Number(process.env.DB_PORT))
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [AuthModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
